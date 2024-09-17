@@ -5,7 +5,6 @@
       "appLocation": "client",
       "outputLocation": "dist",
       "apiLocation": "func",
-      "dataApiLocation": "swa-db-connections",
       "appBuildCommand": "npm run build",
       "run": "npm run dev"
     }

@@ -19,22 +19,34 @@ namespace Database.Deploy
             var connectionString = Env.GetString("MSSQL");
             
             if (string.IsNullOrEmpty(connectionString)) {
-                Console.WriteLine("ERROR: 'MSSQL' enviroment variable not set or empty.");
+                Console.WriteLine("ERROR: 'MSSQL' environment variable not set or empty.");
                 Console.WriteLine("You can create an .env file in parent folder that sets the 'MSSQL' environment variable; then run this app again.");                
                 return 1;
             }
             
             var csb = new SqlConnectionStringBuilder(connectionString);
+            csb.Authentication = SqlAuthenticationMethod.ActiveDirectoryInteractive;
             Console.WriteLine($"Deploying database: {csb.InitialCatalog}");
 
-            Console.WriteLine("Testing connection...");
-            var conn = new SqlConnection(csb.ToString());
-            conn.Open();
-            conn.Close();
+            try
+            {
+                Console.WriteLine("Testing connection...");
+                using (var conn = new SqlConnection(csb.ToString()))
+                {
+                    conn.Open();
+                    Console.WriteLine("Connection successful!");
+                    conn.Close();
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine($"Connection failed: {ex.Message}");
+                return 1;
+            }
 
             FileSystemScriptOptions options = new() {
                 IncludeSubDirectories = false,
-                Extensions = ["*.sql"],
+                Extensions = new[] { "*.sql" },
                 Encoding = Encoding.UTF8
             };
 
