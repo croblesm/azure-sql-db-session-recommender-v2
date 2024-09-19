@@ -1,6 +1,6 @@
 const siteConfig = {
     name: 'Microsoft Experience Day - AI Edition',
-    website: location.origin,
+    website: 'https://med.gt/',
     sessionUrl: location.origin
 }
 

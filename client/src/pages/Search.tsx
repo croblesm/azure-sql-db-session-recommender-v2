@@ -51,10 +51,9 @@ export default function SessionSearch() {
     <>
       <FancyText>
         <>
-          Use OpenAI to search for interesting sessions. Write the topic you're
-          interested in, and (up to) the top ten most interesting and related
-          session will be returned. The search is done using <a href="https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models#embeddings-models" target="_blank">text embeddings</a> and 
-          then using <a href="https://en.wikipedia.org/wiki/Cosine_similarity" target="_blank">cosine similarity</a> to find the most similar sessions.
+        Utiliza OpenAI para buscar sesiones interesantes. Escribe el tema que te interesa, y se devolverán (hasta) las diez sesiones más interesantes y relacionadas. 
+        La búsqueda se realiza utilizando <a href="https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models#embeddings-models" target="_blank">text embeddings</a> y 
+        luego utilizando <a href="https://en.wikipedia.org/wiki/Cosine_similarity" target="_blank">cosine similarity</a> para encontrar las sesiones más similares.
         </>
       </FancyText>
       <div id="searchbox">
@@ -64,8 +63,8 @@ export default function SessionSearch() {
               <Input
                 id={SEARCH_INPUT_ID}
                 size="large"                
-                aria-label="Search sessions"
-                placeholder="Search"
+                aria-label="Buscar sesiones"
+                placeholder="Haz una búsqueda ..."
                 type="search"
                 name="q"
                 defaultValue={searchQuery}
@@ -74,10 +73,10 @@ export default function SessionSearch() {
               />
               <PrimaryButton
               icon={<Search24Regular />}              
-            >Search</PrimaryButton>
+            >Buscar</PrimaryButton>
               
             </div>
-            {searching && <Spinner label="Searching..." />}
+            {searching && <Spinner label="Buscando..." />}
             <div className="sr-only" aria-live="polite"></div>
           </Form>
         </div>

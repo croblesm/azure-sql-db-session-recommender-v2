@@ -16,13 +16,13 @@ export const Navigation = () => {
         }
       >
         <Tab id="chat" value="chat" icon={<ChatRegular />}>
-          Ask
+          Preguntar
         </Tab>
         <Tab id="search" value="search" icon={<SearchRegular />}>
-          Search
+          Buscar
         </Tab>
         <Tab id="about" value="about" icon={<InfoRegular />}>
-          About
+          Acerca de
         </Tab>
       </TabList>
       <div style={{ paddingBottom: "10px" }}></div>

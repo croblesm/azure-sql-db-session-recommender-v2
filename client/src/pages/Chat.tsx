@@ -18,31 +18,31 @@ var isThinking:boolean = false;
 var intervalId = 0
 var thinkingTicker = 0;
 var thinkingMessages:string[] = [
-  "Analyzing the question...",
-  "Thinking...",
-  "Querying the database...",
-  "Extracting embeddings...",
-  "Finding vectors in the latent space...", 
-  "Identifying context...", 
-  "Analyzing results...",  
-  "Finding the best answer...", 
-  "Formulating response...",
-  "Double checking the answer...",
-  "Correcting spelling...",
-  "Doing an internal review...",
-  "Checking for errors...",
-  "Validating the answer...",
-  "Adding more context...",
-  "Analyzing potential response...",
-  "Re-reading the original question...",
-  "Adding more details...",
-  "Improving the answer...",
-  "Making it nice and polished...",
-  "Removing typos...",
-  "Adding punctuation...",
-  "Checking grammar...",
-  "Adding context...",
-  "Sending response..."
+  "Analizando la pregunta...",
+  "Pensando...",
+  "Consultando la base de datos...",
+  "Extrayendo embeddings...",
+  "Buscando vectores en el espacio latente...", 
+  "Identificando el contexto...", 
+  "Analizando resultados...",  
+  "Encontrando la mejor respuesta...", 
+  "Formulando la respuesta...",
+  "Revisando la respuesta...",
+  "Corrigiendo errores ortográficos...",
+  "Haciendo una revisión interna...",
+  "Verificando errores...",
+  "Validando la respuesta...",
+  "Añadiendo más contexto...",
+  "Analizando la respuesta potencial...",
+  "Releyendo la pregunta original...",
+  "Añadiendo más detalles...",
+  "Mejorando la respuesta...",
+  "Puliendo la respuesta...",
+  "Eliminando errores tipográficos...",
+  "Añadiendo puntuación...",
+  "Revisando la gramática...",
+  "Añadiendo contexto...",
+  "Enviando la respuesta..."
 ]
 
 const useClasses = makeStyles({
@@ -78,15 +78,15 @@ const Answers = ({ data }: { data: Awaited<ReturnType<typeof action>> }) => {
       
   components.push(
     <Card key={cid} className={classes.card}>        
-      <Title2 as="h2" block={true} style={{ marginBottom: "0em", marginTop:"0px" }}>Your question</Title2>
+      <Title2 as="h2" block={true} style={{ marginBottom: "0em", marginTop:"0px" }}>Tu pregunta</Title2>
       <FancyText>
         {question.question}
       </FancyText>
-      <Title2 as="h2" block={true} style={{ marginBottom: "0em" }}>My answer</Title2>
+      <Title2 as="h2" block={true} style={{ marginBottom: "0em" }}>Mi respuesta</Title2>
       <FancyText>
         <ReactMarkdown className={classes.rm}>{answer?.answer}</ReactMarkdown>
       </FancyText>
-      <Title2 as="h2" block={true} style={{ marginBottom: "0em" }}>My thoughts</Title2>
+      <Title2 as="h2" block={true} style={{ marginBottom: "0em" }}>Mi opinión</Title2>
       <FancyText>
         {answer?.thoughts}
       </FancyText>
@@ -144,11 +144,11 @@ export const Chat = () => {
       <div>
         <FancyText>
         <>
-        Haz preguntas al modelo de IA en lenguaje natural y obtén respuestas útiles que te ayudarán a explorar y seleccionar las sesiones de esta conferencia! Aprende más sobre los speakers de 
-        <a href="https://med.gt" target="_blank">Microsoft Experience Day 2024 (MED)</a> y explora temas que más se ajusten a tus intereses.
-
-        Gracias a <a href="https://en.wikipedia.org/wiki/Prompt_engineering" target="_blank">Prompt engineering</a> y 
-        <a href="https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview" target="_blank">Retrieval Augmented Generation (RAG)</a>, ahora es más fácil que nunca encontrar detalles y recomendaciones sobre a qué sesión asistir.
+          Haz preguntas al modelo de IA en lenguaje natural y obtén respuestas útiles que te ayudarán a explorar y seleccionar las sesiones de esta conferencia! Aprende más sobre los speakers de <a href="https://med.gt" target="_blank">Microsoft Experience Day 2024 (MED)</a> y explora temas que más se ajusten a tus intereses.
+          <p>
+            Gracias a <a href="https://en.wikipedia.org/wiki/Prompt_engineering" target="_blank">Prompt engineering</a> y <a href="https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview" target="_blank">Retrieval Augmented Generation (RAG)</a>, 
+            ahora es más fácil que nunca encontrar detalles y recomendaciones sobre a qué sesión asistir.
+          </p>
         </>
         </FancyText>        
       </div>
@@ -158,7 +158,7 @@ export const Chat = () => {
             className={classes.textarea}
             resize="vertical"
             size="large"
-            placeholder="Ask a question..."
+            placeholder="Haz una pregunta ..."
             name="prompt"
             id="prompt"
             disabled={submitting}
@@ -170,7 +170,7 @@ export const Chat = () => {
             icon={<SendRegular />}
             disabled={submitting || !prompt}
           >
-            Ask
+            Pregunta
           </PrimaryButton>
           {submitting && <Spinner label={thinking} />}
         </fetcher.Form>        
