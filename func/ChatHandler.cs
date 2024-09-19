@@ -57,7 +57,7 @@ If the user ask a question that is not related to the provided sessions, you can
         while (foundSessions.Read())
         {
             sessions.Add(new(
-                Id: int.Parse(foundSessions.GetString(0)), // Assuming the string can be parsed to an int
+                Id: foundSessions.GetInt32(0),
                 Title: foundSessions.GetString(1),
                 Abstract: foundSessions.GetString(2),
                 ExternalId: foundSessions.GetString(3),

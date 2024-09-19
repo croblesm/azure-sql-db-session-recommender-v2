@@ -1,5 +1,5 @@
 const siteConfig = {
-    name: 'Cool SQL+AI Conference',
+    name: 'Microsoft Experience Day - AI Edition',
     website: location.origin,
     sessionUrl: location.origin
 }

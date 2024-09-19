@@ -143,12 +143,13 @@ export const Chat = () => {
     <div className={classes.container}>
       <div>
         <FancyText>
-          <>
-          Ask questions to the AI model in natural language and get meaningful answers 
-          to help you navigate the conferences sessions and find the best ones for you.           
-          Thanks to <a href="https://en.wikipedia.org/wiki/Prompt_engineering" target="_blank">Prompt Engineering</a> and <a href="https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview" target="_blank">Retrieval Augmented Generation (RAG) </a> finding
-          details and recommendations on what session to attend is easier than ever.
-          </>
+        <>
+        Haz preguntas al modelo de IA en lenguaje natural y obtén respuestas útiles que te ayudarán a explorar y seleccionar las sesiones de esta conferencia! Aprende más sobre los speakers de 
+        <a href="https://med.gt" target="_blank">Microsoft Experience Day 2024 (MED)</a> y explora temas que más se ajusten a tus intereses.
+
+        Gracias a <a href="https://en.wikipedia.org/wiki/Prompt_engineering" target="_blank">Prompt engineering</a> y 
+        <a href="https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview" target="_blank">Retrieval Augmented Generation (RAG)</a>, ahora es más fácil que nunca encontrar detalles y recomendaciones sobre a qué sesión asistir.
+        </>
         </FancyText>        
       </div>
       <div className={classes.chatArea}>

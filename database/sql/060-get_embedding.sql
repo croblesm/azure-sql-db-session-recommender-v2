@@ -1,3 +1,4 @@
+--@url = 'https://med-ai-gpt.openai.azure.com/openai/deployments/text-embedding-ada-002/embeddings?api-version=2023-03-15-preview',
 create or alter procedure [web].[get_embedding]
 @inputText nvarchar(max),
 @embedding varbinary(8000) output
@@ -7,7 +8,7 @@ begin try
     declare @payload nvarchar(max) = json_object('input': @inputText);
     declare @response nvarchar(max)
     exec @retval = sp_invoke_external_rest_endpoint
-        @url = 'https://med-ai-gpt.openai.azure.com/openai/deployments/text-embedding-ada-002/embeddings?api-version=2023-03-15-preview',
+        @url = 'https://med-ai-gpt.openai.azure.com/openai/deployments/embeddings/embeddings?api-version=2023-05-15',
         @method = 'POST',
         @credential = [https://med-ai-gpt.openai.azure.com],
         @payload = @payload,
