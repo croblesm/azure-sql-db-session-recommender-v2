@@ -1,4 +1,3 @@
---@url = 'https://med-ai-gpt.openai.azure.com/openai/deployments/text-embedding-ada-002/embeddings?api-version=2023-03-15-preview',
 create or alter procedure [web].[get_embedding]
 @inputText nvarchar(max),
 @embedding varbinary(8000) output
